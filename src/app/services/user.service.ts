@@ -9,7 +9,8 @@ export class UserService {
   private apiUrl = "http://localhost:3005/api";
 
   constructor(private http: HttpClient) { }
+
   listUsers() : Observable<any>{
-    return this.http.get(`${this.apiUrl}/get-users`);
+    return this.http.get<any>(`${this.apiUrl}/get-users`);
   }
 }
